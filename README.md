@@ -6,6 +6,9 @@ Export Telemetry and Vehicle Status as prometheus metrics.
 Documentation and Errata over @ [Deez Watts - A Rivian Data Adventure](https://www.deezwatts.com)
 
 ## Props
+The Mace [the-mace/rivian-python-api](https://github.com/the-mace/rivian-python-api)  
+
+kaedenbrinkman [kaedenbrinkman/rivian-api](https://github.com/kaedenbrinkman/rivian-api)  
 
 
 ## Author
