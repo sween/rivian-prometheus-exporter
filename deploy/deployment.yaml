@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rivian-prometheus-exporter-deployment
+  labels:
+    app: rivian-prometheus-exporter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rivian-prometheus-exporter
+  template:
+    metadata:
+      labels:
+        app: rivian-prometheus-exporter
+    spec:
+      containers:
+      - name: rivian-prometheus-exporter
+        image: sween/rivian-prometheus-exporter:latest
+        ports:
+        - containerPort: 5000
+        env:
+        - name: RIVIAN_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: rivian-user-pass
+              key: rivian_password
+        - name: RIVIAN_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: rivian-user-pass
+              key: rivian_username
